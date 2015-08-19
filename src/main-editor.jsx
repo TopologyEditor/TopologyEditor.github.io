@@ -265,10 +265,15 @@ var MainEditor = React.createClass({
                     </div> <br />
                     <div className="row">
                         <div className="centered col-xs-12">
-                            <span className="glyphicon glyphicon-align-justify ct-box-property" title="Properties"></span> Properties
-                            <select onChange={this.handlePropertyMenu}>
-                                {PropertiesMenu}
-                            </select>
+                            <form className="col-xs-6" method="get" action="test/o2prototype_topology.xml">
+                                <Button type="submit">Download O2 DDS xml</Button>
+                            </form>
+                            <div className="col-xs-6">
+                                <span className="glyphicon glyphicon-align-justify ct-box-property" title="Properties"></span> Properties
+                                <select onChange={this.handlePropertyMenu}>
+                                    {PropertiesMenu}
+                                </select>
+                            </div>
                         </div>
                     </div>
                     </div>
