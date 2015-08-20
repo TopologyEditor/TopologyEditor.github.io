@@ -19,7 +19,7 @@ var oldInteractive = false;
 
 var MyRectangle = React.createClass({
     propTypes: {
-        wdith: React.PropTypes.number.isRequired,
+        width: React.PropTypes.number.isRequired,
         height: React.PropTypes.number.isRequired,
         tasks: React.PropTypes.array.isRequired,
         collections: React.PropTypes.array.isRequired,
@@ -164,6 +164,7 @@ var MyRectangle = React.createClass({
                 && JSON.stringify(nextProps.tasks) === oldHistTasks
                 && JSON.stringify(nextProps.collections) === oldHistCollections 
                 && JSON.stringify(nextProps.main.groups) === oldHistGroups 
+                && this.props.interactive === nextProps.interactive
             )
         if (noDataChange) {
             return false;

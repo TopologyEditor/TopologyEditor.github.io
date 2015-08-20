@@ -112,6 +112,7 @@ var MainEditor = React.createClass({
         } else {
             this.state.interactive = true;          
         }
+        this.forceUpdate();
     },
 
     handlePropertyMenu: function(event) {
@@ -245,7 +246,7 @@ var MainEditor = React.createClass({
                             })}
                         </div>
                     <div className="centered main-element-vis">
-                        <MyRectangle width={600} height={600} tasks={this.props.tasks} collections={this.props.collections} main={this.props.main} interactive={!this.state.interactive} onPaperChange={this.handlePaperVis}/>
+                        <MyRectangle width={600} height={600} tasks={this.props.tasks} collections={this.props.collections} main={this.props.main} interactive={this.state.interactive} onPaperChange={this.handlePaperVis}/>
                     </div>
                     <div className="row visual-menu">
                         <div className="col-xs-12">
@@ -265,15 +266,10 @@ var MainEditor = React.createClass({
                     </div> <br />
                     <div className="row">
                         <div className="centered col-xs-12">
-                            <form className="col-xs-6" method="get" action="test/o2prototype_topology.xml">
-                                <Button type="submit">Download O2 DDS xml</Button>
-                            </form>
-                            <div className="col-xs-6">
-                                <span className="glyphicon glyphicon-align-justify ct-box-property" title="Properties"></span> Properties
-                                <select onChange={this.handlePropertyMenu}>
-                                    {PropertiesMenu}
-                                </select>
-                            </div>
+                            <span className="glyphicon glyphicon-align-justify ct-box-property" title="Properties"></span> Properties
+                            <select onChange={this.handlePropertyMenu}>
+                                {PropertiesMenu}
+                            </select>
                         </div>
                     </div>
                     </div>
